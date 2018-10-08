@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Airplane fleet datatable</title>
+
+    <!-- Scaling for devices -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Data tables styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/General.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <div class="container">
+        <div class=“row”>
+            <div class=“col-md-12”>
+                <h2>DataTable of XYZ Airplane fleet</h2>
+                <table id="airplaneTable" class="display" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Current Airport</th>
+                            <th>Current Fuel</th>
+                            <th>Edit/delete</th>
+                            <th>Fly</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <div class=“row”>
+            <div class=“col-md-12”>
+                <button class="btn btn-primary" type="text" data-toggle="modal" data-target="#newAirplaneModal">New
+                    Airplane</button>
+            </div>
+        </div>
+
+        <!-- New Airplane Modal -->
+        <div id="newAirplaneModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Airplane</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="col-sm-12" data-toggle="validator" role="form" id="newAirplaneForm" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="inputTitle" class="control-label">Enter Current Airport</label>
+                                <input type="text" class="form-control" id="currentAirport" placeholder="Enter Current Airport"
+                                    data-error="No valid input" required>
+                            </div>
+                            <button type="text" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Airplane Modal -->
+        <div id="editAirplaneModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Airplane</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="col-sm-12" data-toggle="validator" role="form" id="editAirplaneForm" onsubmit="return false;">
+                            <input type="hidden" id="id1" value="">
+                            <div class="form-group">
+                                <label for="inputTitle" class="control-label">Choose Current Airport</label>
+                                <input type="text" class="form-control" id="newAirport" placeholder="Enter new Current Airport"
+                                    data-error="No valid input" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="text" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                        <form class="col-sm-12" data-toggle="validator" role="form" id="deleteAirplaneForm" onsubmit="return false;">
+                            <input type="hidden" value="" class="form-control" id="deleteAirplaneId" required>
+                            <div class="form-group">
+                                <button type="text" class="btn btn-primary">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fly Airplane Modal -->
+        <div id="flyAirplaneModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Fly Airplane</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="col-sm-12" data-toggle="validator" role="form" id="flyAirplaneForm" onsubmit="return false;">
+                            <input type="hidden" id="id1" value="">
+                            <div class="form-group">
+                                <label for="inputTitle" class="control-label">Choose destination</label>
+                                <input type="text" class="form-control" id="newAirport" placeholder="Enter destination"
+                                    data-error="No valid input" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="text" class="btn btn-primary">Fly</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts for data tables -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
+    <script src="JQuery/Airplane.js"></script>
+
+</body>
+
+</html>
